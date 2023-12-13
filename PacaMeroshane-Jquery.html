@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  #colorBox {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: red;
+  margin-top: 20px;
+  height: 100px:
+}
+   
+  </style>
+</head>
+<body>
+<p>Click the "Click" button to toggle</p>
+
+<button onclick="myFunction()">Click</button>
+
+<div id="colorBox"><span>asdasdasdas.</p>
+</div>
+
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("colorBox");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+document.getElementById("colorBox").onmouseenter = function() {mouseEnter()};
+document.getElementById("colorBox").onmouseleave = function() {mouseLeave()};
+
+function mouseEnter() {
+  document.getElementById("colorBox").style.color = "blue";
+}
+
+function mouseLeave() {
+  document.getElementById("colorBox").style.color = "black";
+}
+</script>
+
+</body>
+</html>
+
+ 
