@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+}
+
+.btn-rounded {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.btn-outline-warning {
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+}
+  </style>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<p style="background-color:#F8F8F8">WELCOME CARD</p>
+<hr>
+<h1><center><strong>WELCOME to my website</strong></center></h1>
+<h4><center>Register here!</center></h4>
+<hr>
+
+<div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-notify modal-warning" role="document">
+<div class="modal-content">
+<div class="modal-header text-center">
+<h4 class="modal-title white-text w-100 font-weight-bold py-2">REGISTER</h4>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true" class="white-text">&times;</span>
+</button>
+</div>
+
+<div class="modal-body">
+<div class="md-form mb-5">
+<i class="fas fa-user prefix grey-text"></i>
+<input type="text" id="formName" class="form-control validate">
+<label data-error="wrong" data-success="right" for="formName">NAME</label>
+</div>
+
+<div class="md-form">
+<i class="fas fa-envelope prefix grey-text"></i>
+<input type="text" id="formSection" class="form-control validate">
+<label data-error="wrong" data-success="right" for="formSection">Section</label>
+</div>
+</div>
+
+<div class="modal-footer justify-content-center">
+<a type="button" class="btn btn-outline-warning waves-effect" id="saveChangesBtn">SAVE CHANGES <i class="fas fa-paper-plane-o ml-1"></i></a>
+</div>
+</div>
+</div>
+</div>
+
+<div class="text-center">
+<a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#orangeModalSubscription">REGISTER</a>
+</div>
+
+
+<div class="modal fade" id="displayModal" tabindex="-1" role="dialog" aria-labelledby="displayModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="displayModalLabel"><strong>YOU HAVE SUCCESSFULLY REGISTERED!</strong></h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body" id="displayContent">
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$("#saveChangesBtn").click(function(){
+var name = $("#formName").val();
+var section = $("#formSection").val();
+$("#displayContent").html("<p><strong>Name: " + name + "</strong></p><strong><p>Section: " + section + "</strong></p>");
+$("#displayModal").modal("show");
+});
+});
+</script>
+</body>
+</html>
